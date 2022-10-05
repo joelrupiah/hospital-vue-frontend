@@ -2,21 +2,20 @@
     <div class="container-scroller">
     
     <!-- ADMIN HEADER -->
-    <admin-header />
-    
+    <admin-header v-if="!['AdminLogin', 'DoctorLogin'].includes($route.name)"></admin-header>
 
     <div class="container-fluid page-body-wrapper">
       
       <!-- SIDEBAR -->
 
-      <admin-sidebar />
+      <admin-sidebar v-if="!['AdminLogin', 'DoctorLogin'].includes($route.name)"></admin-sidebar>
 
       <div class="main-panel">
 
         <router-view></router-view>
         
         <!-- ADMINFOOTER -->
-        <admin-footer />
+        <admin-footer v-if="!['AdminLogin', 'DoctorLogin'].includes($route.name)"></admin-footer>
 
       </div>
       <!-- main-panel ends -->

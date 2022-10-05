@@ -8,6 +8,18 @@
               <span class="menu-title">Dashboard</span>
             </RouterLink>
           </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/admin-login">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Admin Login</span>
+            </RouterLink>
+          </li>
+          <li class="nav-item">
+            <RouterLink class="nav-link" to="/doctor-login">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Doctor Login</span>
+            </RouterLink>
+          </li>
           <li class="nav-item nav-category">Manage Users</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
