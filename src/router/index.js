@@ -23,6 +23,11 @@ const router = createRouter({
       name: 'createdoctor',
       component: () => import('../components/pages/Doctor/CreateDoctor.vue')
     },
+    {
+      path: '/update-doctor',
+      name: 'editdoctor',
+      component: () => import('../components/pages/Doctor/EditDoctor.vue')
+    },
   ]
 })
 

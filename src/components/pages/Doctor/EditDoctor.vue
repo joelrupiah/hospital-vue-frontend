@@ -4,7 +4,7 @@
             <div class="col-12 grid-margin">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Create a Doctor</h4>
+                        <h4 class="card-title">Update a Doctor</h4>
                         <form class="form-sample">
                             <p class="card-description">
                                 Personal info
@@ -263,7 +263,7 @@
                             <div class="row">
                                 <div class="col-md-6">
                                     <vs-button color="dark" type="filled" size="small">
-                                        Create Doctor
+                                        Update Doctor
                                     </vs-button>
                                     <vs-button class="ms-2" color="warning" type="filled" size="small">
                                         Cancel
@@ -280,7 +280,7 @@
 
 <script>
 export default {
-    name: 'CreateDoctor',
+    name: 'EditDoctor',
     data() {
         return {}
     }
