@@ -39,6 +39,7 @@
 </template>
 
 <script>
+import Axios from 'axios'
 export default {
     name: 'AdminLogin',
     data() {
@@ -57,7 +58,13 @@ export default {
             })
         },
         submit(){
-            
+            Axios.post('/admin/login', this.form)
+                .then(() => {
+                    console.log('sent')
+                })
+                .catch(err => {
+
+                })
         }
     }
 }

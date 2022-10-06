@@ -59,7 +59,11 @@
 export default {
     name: 'DoctorList',
     data() {
-        return {}
+        return {
+        }
+    },
+    methods: {
+        
     }
 }
 </script>
