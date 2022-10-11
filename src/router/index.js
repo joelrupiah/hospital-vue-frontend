@@ -64,7 +64,7 @@ const router = createRouter({
       component: () => import('../components/pages/Doctor/CreateDoctor.vue')
     },
     {
-      path: '/update-doctor',
+      path: '/update-doctor/:id',
       name: 'EditDoctor',
       component: () => import('../components/pages/Doctor/EditDoctor.vue')
     },

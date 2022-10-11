@@ -22,7 +22,7 @@
                             <div class="row">
                                 <div class="col-md-8">
                                     <div class="form-group row">
-                                        <label class="col-sm-12 col-form-label">Choose Permission <span
+                                        <label class="col-sm-12 col-form-label">Assign Permission/s to Role <span
                                                 class="text-danger">*</span> </label>
                                         <div class="col-sm-12">
                                             <el-checkbox 

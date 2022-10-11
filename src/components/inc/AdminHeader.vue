@@ -19,7 +19,7 @@
     <div class="navbar-menu-wrapper d-flex align-items-top">
       <ul class="navbar-nav">
         <li class="nav-item font-weight-semibold d-none d-lg-block ms-0">
-          <h2 class="welcome-text">Good Morning, <span class="text-black fw-bold">John Doe</span></h2>
+          <h2 class="welcome-text">Good Loogged in time, <span class="text-black fw-bold">Logged in user</span></h2>
           <h3 class="welcome-sub-text">Last login date </h3>
         </li>
       </ul>
@@ -159,6 +159,6 @@ export default {
   //         console.log(response)
   //       })
   //   }
-  // }
+  // },
 }
 </script>
