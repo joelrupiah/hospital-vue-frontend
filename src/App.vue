@@ -20,6 +20,16 @@ import HelloWorld from './components/HelloWorld.vue'
   <RouterView />
 </template>
 
+<!-- <script>
+import LoaderCompVue from './components/LoaderComp.vue';
+export default{
+  name: 'App',
+  components: {
+    LoaderCompVue
+  }
+}
+</script> -->
+
 <style scoped>
 header {
   line-height: 1.5;

@@ -119,7 +119,7 @@
           <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
             <div class="dropdown-header text-center">
               <img class="img-md rounded-circle" src="images/faces/face8.jpg" alt="Profile image">
-              <p class="mb-1 mt-3 font-weight-semibold">Allen Moreno</p>
+              <p class="mb-1 mt-3 font-weight-semibold">Admin Name</p>
               <p class="fw-light text-muted mb-0">allenmoreno@gmail.com</p>
             </div>
             <RouterLink to="/profile" class="dropdown-item">
@@ -132,7 +132,10 @@
               Activity</a>
             <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
               FAQ</a>
-            <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>Sign Out</a>
+            <a class="dropdown-item" @click.prevent="logoutAdmin">
+              <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>
+              Sign Out
+            </a>
           </div>
         </li>
       </ul>
@@ -146,19 +149,33 @@
 </template>
 
 <script>
+import { computed } from '@vue/reactivity'
 import Axios from 'axios'
+import { mapActions, useStore } from 'vuex'
+import { LOGIN_ACTION } from '../../store/storeConstants'
 export default {
   name: 'AdminHeader',
-  data() {
-    return {}
-  },
-  // methods: {
-  //   getAuthUser() {
-  //     Axios.get('http://127.0.0.1:8000/admin/user')
-  //       .then((response) => {
-  //         console.log(response)
-  //       })
+  // setup() {
+  //   const store = useStore()
+  //   // console.log(store.state.admin)
+  //   const admin = computed(() => {
+  //     return store.state.admin.name
+  //   })
+  //   return {
+  //     admin
   //   }
   // },
+  data(){
+    return {}
+  },
+  methods: {
+    ...mapActions('auth', {
+      logout: LOGIN_ACTION
+    }),
+    logoutAdmin(){
+      this.logout()
+    }
+  }
+
 }
 </script>

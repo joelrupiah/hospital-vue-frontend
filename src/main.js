@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import AdminMaster from './components/AdminMaster.vue'
 import router from './router'
+import store from './store'
 
 import Vuesax from 'vuesax3'
 import ElementPlus from 'element-plus'
@@ -13,9 +14,12 @@ const app = createApp(AdminMaster)
 
 app.component('admin-master', AdminMaster)
 
+
+
 app.use(Vuesax)
 app.use(ElementPlus)
 
 app.use(router)
+app.use(store)
 
 app.mount('#admin')
