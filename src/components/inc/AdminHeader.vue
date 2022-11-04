@@ -132,7 +132,7 @@
               Activity</a>
             <a class="dropdown-item"><i class="dropdown-item-icon mdi mdi-help-circle-outline text-primary me-2"></i>
               FAQ</a>
-            <a class="dropdown-item" @click.prevent="logoutAdmin">
+            <a class="dropdown-item" v-if="isAdminAuthenticated" @click.prevent="logoutAdmin">
               <i class="dropdown-item-icon mdi mdi-power text-primary me-2"></i>
               Sign Out
             </a>
@@ -151,8 +151,8 @@
 <script>
 import { computed } from '@vue/reactivity'
 import Axios from 'axios'
-import { mapActions, useStore } from 'vuex'
-import { LOGIN_ACTION } from '../../store/storeConstants'
+import { mapActions, mapGetters, useStore } from 'vuex'
+import { GET_ADMIN_TOKEN_GETTER, LOGIN_ACTION } from '../../store/storeConstants'
 export default {
   name: 'AdminHeader',
   // setup() {
@@ -174,7 +174,13 @@ export default {
     }),
     logoutAdmin(){
       this.logout()
+      this.$router.push('/admin-login')
     }
+  },
+  computed: {
+    ...mapGetters('auth', {
+        isAdminAuthenticated: GET_ADMIN_TOKEN_GETTER
+      })
   }
 
 }

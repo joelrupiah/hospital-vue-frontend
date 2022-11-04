@@ -1,11 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import store from '../store/index'
+import { GET_ADMIN_TOKEN_GETTER } from '../store/storeConstants'
 
 const routes = [
   {
     path: '/admin-login',
     name: 'AdminLogin',
-    component: () => import('../components/pages/Auth/AdminLogin.vue')
+    component: () => import('../components/pages/Auth/AdminLogin.vue'),
+    meta: { requiresAdminVisitor: true }
   },
   {
     path: '/doctor-login',
@@ -15,7 +17,8 @@ const routes = [
   {
     path: '/',
     name: 'Dashboard',
-    component: () => import('../components/pages/Dashboard.vue')
+    component: () => import('../components/pages/Dashboard.vue'),
+    meta: { requiresAdminAuth: true }
   },
   {
     path: '/profile',
@@ -77,6 +80,32 @@ const router = createRouter({
 
 router.beforeEach(() => {
   // console.log(store.state.admin) // access store data
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAdminAuth)) {
+    if (GET_ADMIN_TOKEN_GETTER) {
+      next({
+        path: '/admin-login'
+      })
+    }
+    else{
+      next()
+    }
+  }
+  else if (to.matched.some(record => record.meta.requiresAdminVisitor)){
+    if (GET_ADMIN_TOKEN_GETTER) {
+      next({
+        path: '/'
+      })
+    }
+    else{
+      next()
+    }
+  }
+  else{
+    next()
+  }
 })
 
 export default router
